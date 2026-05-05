@@ -1,0 +1,29 @@
+# Log files (event tracking - not for GitHub)
+login_events.txt
+data/login_events.txt
+
+# Database files  
+*.db
+data/*.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

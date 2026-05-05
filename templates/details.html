@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Details</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+/* highlight line */
+.highlight {
+  background: #dbeafe;
+  padding: 4px;
+}
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.container {
+  position: relative;
+  overflow: visible; /* important */
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #e5e5e5;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right img {
+    width: 80px;   /* adjust size */
+}
+/* section headings */
+.section-title {
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="top-right">
+    <img src="{{ url_for('static', filename='images/supraja.png') }}" alt="logo">
+</div>
+<h1>Project Information</h1>
+
+<p>
+This project was developed by the Cyber Security Research Team as part of a Cyber Security Internship.
+This project is designed to simulate social engineering attacks and raise awareness about phishing and cyber frauds.
+</p>
+
+<!-- Project Details -->
+<table>
+<tr>
+<th>Project Details</th>
+<th>Value</th>
+</tr>
+
+<tr>
+<td>Project Name</td>
+<td>Social Engineering Simulator</td>
+</tr>
+
+<tr>
+<td>Project Description</td>
+<td>
+Simulates phishing attacks by sending fake verification emails and redirecting users to realistic login/verification pages. 
+Helps demonstrate how attackers manipulate users and promotes cybersecurity awareness.
+</td>
+</tr>
+
+<tr>
+<td>Project Start Date</td>
+<td>05-April-2026</td>
+</tr>
+
+<tr>
+<td>Project End Date</td>
+<td>28-April-2026</td>
+</tr>
+
+<tr>
+<td>Project Status</td>
+<td><b>Completed</b></td>
+</tr>
+</table>
+
+<!-- Developer Details -->
+<div class="section-title">Developer Details</div>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Employee ID</th>
+<th>Email</th>
+</tr>
+
+<tr>
+<td>Kanishkaa S</td>
+<td>ST#IS#8986</td>
+<td>kankanish722@gmail.com</td>
+</tr>
+
+<tr>
+<td>Tulasi Amrutha Tatineni</td>
+<td>ST#IS#8968</td>
+<td>Tatinenitulasiamrutha@gmail.com</td>
+</tr>
+
+<tr>
+<td>Vedasree Ruttala</td>
+<td>ST#IS#8967</td>
+<td>vr1457@srmist.edu.in</td>
+</tr>
+
+<tr>
+<td>Suhani Singh</td>
+<td>ST#IS#8951</td>
+<td>Suhanis1625@gmail.com</td>
+</tr>
+
+<tr>
+<td>Podili Ayusana Durga Vashiti </td>
+<td>ST#IS#8975</td>
+<td>vashitipodili@gmail.com</td>
+</tr>
+</table>
+
+<!-- Company Details -->
+<div class="section-title">Company Details</div>
+
+<table>
+<tr>
+<th>Company</th>
+<th>Contact Mail</th>
+</tr>
+
+<tr>
+<td>Name</td>
+<td>Supraja Technologies</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td>contact@suprajatechnologies.com</td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>

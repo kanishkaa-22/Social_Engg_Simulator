@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #34495e;
+            color: white;
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        .status-success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .status-failed {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .no-events {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        .info-box strong {
+            color: #2c3e50;
+        }
+
+        .refresh-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            float: right;
+        }
+
+        .refresh-btn:hover {
+            background: #2980b9;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .timestamp {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header-row">
+        <div>
+            <a href="/" class="back-link">← Back to Home</a>
+            <h1>Login Events Log</h1>
+        </div>
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
+    </div>
+
+    <div class="info-box">
+        <strong>📊 Login Events:</strong> All login attempts (successful and failed) are recorded in the backend database.
+    </div>
+
+    {% if events %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Status</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event[0] }}</td>
+                        <td>{{ event[1] }}</td>
+                        <td><code>{{ event[2] }}</code></td>
+                        <td>
+                            {% if event[3] == 'SUCCESS' %}
+                                <span class="status-success">✓ {{ event[3] }}</span>
+                            {% else %}
+                                <span class="status-failed">✗ {{ event[3] }}</span>
+                            {% endif %}
+                        </td>
+                        <td><span class="timestamp">{{ event[4] }}</span></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="no-events">
+            No login events recorded yet. Start by <a href="/login">logging in</a>!
+        </div>
+    {% endif %}
+
+    <div style="margin-top: 30px; text-align: center; color: #999; font-size: 14px;">
+        <p>Last 50 events are displayed. Events are stored permanently in the backend SQLite database.</p>
+    </div>
+</div>
+
+</body>
+</html>
