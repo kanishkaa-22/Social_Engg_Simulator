@@ -15,8 +15,8 @@ SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 
 # 👉 SET YOUR EMAIL HERE
-SENDER_EMAIL = "newonline2006@gmail.com"
-SENDER_PASSWORD = "ejukpatydvukpcor"
+SENDER_EMAIL = "your mail_id"
+SENDER_PASSWORD = "mail app password"
 
 # 👉 DEFAULT (will be overridden by ngrok URL if available)
 LOCAL_URL = "http://localhost:5000/"
