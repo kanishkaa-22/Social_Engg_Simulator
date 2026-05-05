@@ -5,8 +5,11 @@
 [![Railway Deployment](https://img.shields.io/badge/Railway-Online-brightgreen?style=flat-square&logo=railway)](https://social-engg-simulator-production.up.railway.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Active-blue?style=flat-square&logo=github)](https://github.com/kanishkaa-22/Social_Engg_Simulator)
 [![Flask Application](https://img.shields.io/badge/Flask-Running-red?style=flat-square&logo=flask)](https://social-engg-simulator-production.up.railway.app)
+[![GitHub Actions](https://github.com/kanishkaa-22/Social_Engg_Simulator/actions/workflows/deploy.yml/badge.svg)](https://github.com/kanishkaa-22/Social_Engg_Simulator/actions)
 
 **Live Application:** 🔗 https://social-engg-simulator-production.up.railway.app
+
+**GitHub Actions CI/CD:** ✅ Automatic deployment enabled on push to main
 
 ---
 
@@ -103,19 +106,32 @@ python mail_sender.py
 - **Build Command:** gunicorn app:app
 - **Auto-Deploy:** Enabled on GitHub push
 
+### GitHub Actions CI/CD Pipeline
+- **Workflow File:** `.github/workflows/deploy.yml`
+- **Trigger:** Automatic on push to `main` branch
+- **Action:** Deploys to Railway production environment
+- **Status:** ✅ Active and Monitoring
+- **View Actions:** https://github.com/kanishkaa-22/Social_Engg_Simulator/actions
+
 ### GitHub Integration
 - **Repository:** https://github.com/kanishkaa-22/Social_Engg_Simulator
-- **Main Branch:** main (Production)
-- **Tracked Files:** 35 files
-- **Latest Commit:** Auto-synced with Railway
+- **Main Branch:** main (Production-ready)
+- **Default Branch:** main
+- **Auto-Deploy:** Yes (via GitHub Actions)
+- **Latest Commit:** Synced to Railway
 
 ### Access Methods
 | Method | URL |
 |--------|-----|
-| **Production** | https://social-engg-simulator-production.up.railway.app |
-| **Local** | http://127.0.0.1:5000 |
-| **Network** | http://192.168.x.x:5000 |
-| **Public (ngrok)** | https://xxxx-xxxx-xxxx.ngrok-free.app |
+| **Production (Railway)** | https://social-engg-simulator-production.up.railway.app |
+| **Local Development** | http://127.0.0.1:5000 |
+| **Network Access** | http://192.168.x.x:5000 |
+| **Public Tunnel (ngrok)** | https://xxxx-xxxx-xxxx.ngrok-free.app |
+
+### Deployment Flow
+```
+Push to main → GitHub Actions Triggered → Railway Deployment → Live Production
+```
 
 ---
 
